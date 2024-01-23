@@ -1,0 +1,23 @@
+---
+name: ❓ Question
+description: Share a question about ${{ github.repository }}
+title: "[Question]: "
+labels:
+  - "question"
+assignees:
+  - keygun-development
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thanks :heart: for taking the time to fill out this question report!**
+
+        We are also happy to accept contributions from our users. For more details see [the guidelines](https://github.com/QuickDevelopment/${{ github.repository }}/blob/${{ github.default_branch }}/CONTRIBUTING.md).
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        A clear and concise description of the question.
+    validations:
+      required: true
