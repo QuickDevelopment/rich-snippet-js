@@ -1,0 +1,64 @@
+{
+  "name": "rich-snippet-js",
+  "private": true,
+  "version": "0.0.1",
+  "repository": "https://github.com/QuickDevelopment/rich-snippet-js",
+  "author": "QuickDevelopment",
+  "homepage": "https://github.com/QuickDevelopment/rich-snippet-js",
+  "bugs": {
+    "url": "https://github.com/QuickDevelopment/rich-snippet-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "description": "A typescript package that generates a JsonLd for all google structured data components",
+  "type": "module",
+  "main": "./dist/rich-snippet-js.umd.cjs",
+  "module": "./dist/rich-snippet-js.js",
+  "typings": "./dist/main.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/rich-snippet-js.umd.cjs"
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "google",
+    "seo",
+    "rich",
+    "snippets",
+    "structured",
+    "data",
+    "js",
+    "javascript",
+    "typescript",
+    "quickdevelopment",
+    "rich-snippet-js"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build --watch",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run lint && npm run build",
+    "lint": "npx eslint ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.1"
+  }
+}

@@ -1,5 +1,5 @@
 <div align="center">
-<h2>@quickdevelopment/package &middot; <a href="https://badge.fury.io/js/@quickdevelopment%2Fwp-js"><img src="https://badge.fury.io/js/@quickdevelopment%2Fwp-js.svg" alt="npm version" height="18"></a></h2>
+<h2>@quickdevelopment/rich-snippet-js &middot; </h2>
   <p align="center">
     This project is a template for quickly developing a new project. It includes a number of features that are common to most projects.
   </p>
@@ -19,7 +19,7 @@
 ## Installation
 
 ```
-npm install @quickdevelopment/package
+npm install @quickdevelopment/rich-snippet-js
 ```
 
 ## Usage
