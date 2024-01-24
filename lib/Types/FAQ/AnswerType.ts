@@ -1,4 +1,4 @@
 export default interface AnswerType {
-    "@type": "Answer";
+    "@type"?: "Answer";
     text: string;
 }
