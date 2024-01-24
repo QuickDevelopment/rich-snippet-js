@@ -1,10 +1,9 @@
-import RichSnippetType from "../Types/RichSnippetType.ts";
+export default class RichSnippet<T> {
+    protected data: T;
 
-export default class RichSnippet {
-    protected data: RichSnippetType = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-    };
+    constructor(initialData: T) {
+        this.data = initialData;
+    }
 
     public toJSON(): string {
         return JSON.stringify(this.data, null, 2);

@@ -1,14 +1,14 @@
 import QuestionType from "../Types/FAQ/QuestionType";
 import AnswerType from "../Types/FAQ/AnswerType";
 import RichSnippet from "../Core/RichSnippet";
+import FAQType from "../Types/FAQ/FAQType.ts";
 
-export default class FAQ extends RichSnippet {
+export default class FAQ extends RichSnippet<FAQType> {
     public constructor() {
-        super()
-        this.data = {
+        super({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-        };
+        });
     }
 
     private addQuestion(name: string, answer: string): this {
