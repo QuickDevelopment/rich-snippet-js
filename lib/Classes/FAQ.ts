@@ -1,17 +1,17 @@
-import FAQType from "../Types/FAQ/FAQType";
 import QuestionType from "../Types/FAQ/QuestionType";
+import AnswerType from "../Types/FAQ/AnswerType";
+import RichSnippet from "../Core/RichSnippet";
 
-export default class FAQ {
-    private readonly data: FAQType;
-
-    constructor() {
+export default class FAQ extends RichSnippet {
+    public constructor() {
+        super()
         this.data = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
         };
     }
 
-    addQuestion(name: string, answer: string): this {
+    private addQuestion(name: string, answer: string): this {
         const newQuestion: QuestionType = {
             "@type": "Question",
             name: name,
@@ -24,25 +24,18 @@ export default class FAQ {
         if (!this.data.mainEntity) {
             this.data.mainEntity = [];
         }
-
         this.data.mainEntity.push(newQuestion);
-
         return this;
     }
 
-    addQuestions(questions: QuestionType[]): this {
-        if (!this.data.mainEntity) {
-            this.data.mainEntity = [];
+    public addQuestions(questions: QuestionType[] | QuestionType): this {
+        if (Array.isArray(questions)) {
+            questions.forEach(({ name, acceptedAnswer }: {name: string, acceptedAnswer: AnswerType}) =>
+                this.addQuestion(name, acceptedAnswer.text)
+            );
+        } else {
+            this.addQuestion(questions.name, questions.acceptedAnswer.text);
         }
-
-        questions.forEach(({ name, acceptedAnswer }) =>
-            this.addQuestion(name, acceptedAnswer.text)
-        );
-
         return this;
-    }
-
-    toJSON(): string {
-        return JSON.stringify(this.data, null, 2);
     }
 }
