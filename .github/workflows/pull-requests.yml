@@ -5,7 +5,7 @@ on:
       - opened
       - synchronize
     branches:
-      - 'main'
+      - 'master'
 
 jobs:
   test_pr_main:
